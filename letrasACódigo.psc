@@ -2,7 +2,7 @@
 Algoritmo tradutor
 
 	Definir p,q,n,z,k,E,contador Como Entero
-	Definir seguido Como Caracter
+	Definir resultado Como Caracter
 	Dimension array[10]
 	Escribir "Dame un numeros primos entre el 1 y el 23: "
 	Leer  p
@@ -25,11 +25,11 @@ Algoritmo tradutor
 	Hasta Que P==-1 o contador>10
 
 	Para i=1 Hasta  contador-1 Hacer
-		seguido=seguido + ConvertirATexto(array[i])
+		resultado=resultado + ConvertirATexto(array[i])
 		si i<contador-1
-			seguido=seguido +"-"
+			resultado=resultado +"-"
 		FinSi
 	FinPara
-	Escribir seguido
+	Escribir resultado
 	
 FinAlgoritmo
