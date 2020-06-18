@@ -1,0 +1,27 @@
+@startuml Aplicacion pisos
+actor   Cliente 
+actor   Administrativo 
+actor   Vendedor
+package zonaCliente{
+Cliente --> (Login)
+(Login)--(cancelar)
+(Login)--(banco)
+(banco)--(comprar)
+(Login)--(ofertas)
+}
+(correo)..(ofertas)
+(correo)<|--|>Cliente
+(ofertas)--(reservado)
+(reservado)--(cancelar)
+(comprar)--(inmueble)
+package zonaAdministrativo{
+Administrativo --> (LoginAdmistrativo)
+Administrativo-->Cliente
+LoginAdmistrativo-->(datosVendedor)
+LoginAdmistrativo-->(inmueble)
+LoginAdmistrativo-->(altaCliente)
+}
+Vendedor --> (inmueble) 
+(inmueble)--(alquilado)
+(inmueble)--(reservado)
+@enduml

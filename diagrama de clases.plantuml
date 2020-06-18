@@ -1,0 +1,59 @@
+@startuml Aplicación de una pequeña tienda
+Tienda "1"*--"*" Compras
+Compras o-- Categoria 
+Compras -- Productos
+Empleado --o Pagos 
+Tienda "1" *-- "*" Seccion
+Compras -- Pagos
+Cliente--Compras
+Pagos--FormaDePago
+Seccion--Productos
+Cliente -- Pagos
+
+Class Tienda{    
+    - string nombre 
+}
+Class Compras{
+    
+    - float  cantidadAPagar
+    - date fecha
+    - date fechaDeDevolucion
+    - enum  categoria
+    - int unidadesAdquiridas 
+}
+enum Categoria{
+    oferta, normal, rebajas
+}
+
+Class Productos{
+    - int stock 
+    - int idProducto
+    - string nombre
+    - string descreipción
+    - float precioIndividual
+}
+
+Class Pagos{
+    - enum formaDePago
+    - int numeroTarjeta
+    - string datosClienteCheque
+}
+Class Seccion{
+    - string productos
+    - int cantidad
+    - string numeroDeSerie
+}
+class Empleado{
+        - int idEmpleado
+        - string nombre
+        - bool indefinido
+}
+class Cliente{
+        - int idCliente
+        - string nombre 
+        - int numeroTarjeta      
+}
+enum FormaDePago{
+     tarjeta, cheque, efectivo
+    }
+@enduml
